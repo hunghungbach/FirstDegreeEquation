@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang web toán học</title>
+    <script>
+        function solveEquation() {
+            let a = parseFloat(document.getElementById("equationA").value);
+            let b = parseFloat(document.getElementById("equationB").value);
+            let solution = 0;
+
+            if (a !== 0) {
+                solution = -b / a;
+            } else {
+                if (b === 0) {
+                    solution = "Phương trình vô số nghiệm!";
+                } else {
+                    solution = "Phương trình vô nghiệm!";
+                }
+            }
+            document.getElementById("equationResult").innerHTML = "Nghiệm: " + solution;
+        }
+    </script>
+</head>
+<body>
+    <h2>Giải phương trình bậc nhất</h2>
+    <label for="equationA">Số a:</label>
+    <input type="number" id="equationA"><br><br>
+
+    <label for="equationB">Số b:</label>
+    <input type="number" id="equationB"><br><br>
+
+    <button onclick="solveEquation()">Giải phương trình</button>
+    <p id="equationResult"></p>
+</body>
+</html>
